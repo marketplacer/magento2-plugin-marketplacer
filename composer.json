@@ -3,6 +3,7 @@
     "description": "Summary package for Marketplacer brands and sellers on listings and in orders ",
     "type": "magento2-module",
     "version": "2.0.0",
+    "license": "proprietary",
     "require": {
         "marketplacer/magento2-plugin-base": "^2.0.0",
         "marketplacer/magento2-plugin-brand-api": "^2.0.0",
