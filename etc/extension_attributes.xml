@@ -5,7 +5,4 @@
         <attribute code="price_includes_tax" type="boolean"/>
         <attribute code="shipping_includes_tax" type="boolean"/>
     </extension_attributes>
-    <extension_attributes for="Magento\Sales\Api\Data\OrderInterface">
-        <attribute code="marketplacer_shipping_costs" type="Marketplacer\Marketplacer\Api\Data\Order\MarketplacerShippingCostInterface[]"/>
-    </extension_attributes>
 </config>
