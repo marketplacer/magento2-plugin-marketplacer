@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="extra_shipment_info">
+            <block name="shipped_from_address" template="Marketplacer_Marketplacer::shipment/shipped_from_address.phtml"
+                   after="inventory_shipment" >
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Marketplacer\Marketplacer\ViewModel\Adminhtml\Shipment\ShippedFromAddress</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

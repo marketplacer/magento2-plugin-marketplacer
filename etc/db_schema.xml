@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="marketplacer_shipment_from_address">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="parent_id" unsigned="true" nullable="false" identity="false"
+                comment="Parent ID"/>
+        <column xsi:type="varchar" length="255" name="address" nullable="true" comment="Address"/>
+        <column xsi:type="varchar" length="255" name="subaddress" nullable="true" comment="Subaddress"/>
+        <column xsi:type="varchar" length="255" name="city" nullable="true" comment="City"/>
+        <column xsi:type="varchar" length="255" name="state_short" nullable="true" comment="State short"/>
+        <column xsi:type="varchar" length="255" name="country_name" nullable="true" comment="Country name"/>
+        <column xsi:type="varchar" length="255" name="postcode" nullable="true" comment="Postcode"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MARKETPLACER_SHIPMENT_FROM_ADDRESS_PARENT_ID_SALES_SHIPMENT_ENTITY_ID"
+                    table="marketplacer_shipment_from_address" column="parent_id" referenceTable="sales_shipment"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <index referenceId="MARKETPLACER_SHIPMENT_FROM_ADDRESS_PARENT_ID" indexType="btree">
+            <column name="parent_id"/>
+        </index>
+    </table>
+</schema>

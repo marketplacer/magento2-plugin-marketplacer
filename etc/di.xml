@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Marketplacer\Marketplacer\Api\ShippedFromAddressInterface"
+                type="Marketplacer\Marketplacer\Model\Sales\ShippedFromAddress"/>
+    <preference for="Marketplacer\Marketplacer\Api\ShippedFromAddressRepositoryInterface"
+                type="Marketplacer\Marketplacer\Model\Sales\Order\Shipment\ShippedFromAddressRepository"/>
+
     <type name="Magento\Sales\Block\Adminhtml\Items\Column\DefaultColumn">
         <plugin name="Marketplacer_Marketplacer" type="Marketplacer\Marketplacer\Plugin\Sales\Block\Adminhtml\Items\Column\DefaultColumnPlugin" sortOrder="100"/>
     </type>
@@ -32,5 +37,8 @@
     </type>
     <type name="Magento\Checkout\Block\Cart\Item\Renderer">
         <plugin name="Marketplacer_Marketplacer" type="Marketplacer\Marketplacer\Plugin\Checkout\Block\Cart\Item\RendererPlugin" sortOrder="100"/>
+    </type>
+    <type name="Magento\Sales\Api\ShipmentRepositoryInterface">
+        <plugin name="Marketplacer_Marketplacer" type="Marketplacer\Marketplacer\Plugin\Sales\Order\ShipmentRepositoryPlugin" />
     </type>
 </config>
